@@ -12,8 +12,7 @@ st.set_page_config(
     page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png"
 )
 
-st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=150)  
-st.title("Prioridades")
+st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=150)  
 st.markdown(
     "<h1 style='text-align: center;'>Prioridades</h1>", 
     unsafe_allow_html=True
