@@ -1,27 +1,21 @@
 import streamlit as st
 import pandas as pd
 import re
-# import joblib as jb
-#.\venv\Scripts\activate
-# streamlit run aba.py
-#  Local URL: http://localhost:8501
-# Network URL: http://192.168.1.103:8501
+
 # Configuração da página
 st.set_page_config(
     page_title="Aba de Prioridades", 
-    page_icon="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsJCQcJCQcJCQkJCwkJCQkJCQsJCwsMCwsLDA0QDBEODQ4MEhkSJRodJR0ZHxwpKRYlNzU2GioyPi0pMBk7IRP/2wBDAQcICAsJCxULCxUsHRkdLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCz/wAARCAC0ALIDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAEHBAYIBQID/8QAQhAAAQQBAQUGAwUFAw0AAAAAAQACAwQFEQYHEhI..."
+    page_icon="🛠️"
 )
 
-# Título com imagem ao lado
-st.markdown(
-    """
-    <div style="display: flex; align-items: center;">
-        <h1 style="margin-right: 10px;">Prioridades</h1>
-        <img src="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png" width="50">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+# Criando layout com título e imagem ao lado
+col1, col2 = st.columns([0.75, 0.25])  # Ajustei proporções para mais espaço à imagem
+
+with col1:
+    st.title("Prioridades")  # Título na esquerda
+
+with col2:
+    st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=150)  # Imagem maior
 
 st.divider()
 st.header('Digite as informações abaixo:')
