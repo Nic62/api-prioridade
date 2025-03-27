@@ -7,11 +7,6 @@ import webbrowser
 #.\venv\Scripts\activate
 # streamlit run aba.py
 
-import streamlit as st
-import pandas as pd
-import re
-import webbrowser
-
 st.set_page_config(
     page_title="Aba de Prioridades", 
     page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png"
