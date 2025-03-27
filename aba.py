@@ -32,15 +32,17 @@ if "dados" not in st.session_state:
 
 # Botão 1
 if st.button("Priorizar"):
-    if info_identificacao and id_peca:
-        novo_dado = {"Identificação": info_identificacao, "Peça": id_peca, "Prioridade": info_prio}
-        st.session_state["dados"].append(novo_dado)
-        st.success("Peça priorizada com sucesso!")
-    else:
-        st.warning("Preencha todos os campos antes de priorizar!")
+     if info_identificacao and id_peca:
+         novo_dado = {"Identificação": info_identificacao, "Peça": id_peca, "Prioridade": info_prio}
+         st.session_state["dados"].append(novo_dado)
+         st.success("Peça priorizada com sucesso!")
+     else:
+         st.warning("Preencha todos os campos antes de priorizar!")
 
 # Tabela
 if st.session_state["dados"]:
     st.subheader("Prioridades Concluídas")
     df = pd.DataFrame(st.session_state["dados"])
     st.dataframe(df)
+if st.button("Acessar Planilha Google"):
+    st.markdown('[Clique aqui para acessar a planilha Google](https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0)', unsafe_allow_html=True)
