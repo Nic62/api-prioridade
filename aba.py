@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import re
-import webbrowser
+
 
 # import joblib as jb
 #.\venv\Scripts\activate
@@ -42,9 +42,6 @@ if st.session_state["dados"]:
     df = pd.DataFrame(st.session_state["dados"])
     st.dataframe(df)
 
-if st.session_state.get("mostrar_botao", False):  
-    if st.button("Acessar Planilha Google"):
-        webbrowser.open("https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0")
+st.link_button("Acessar Planilha","https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0")
 
-if st.button("Acessar Looker"):
-    webbrowser.open("https://looker.com")
+st.link_button("Acessar BI", "https://lookerstudio.google.com")
