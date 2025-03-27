@@ -8,7 +8,7 @@ import re
 # Network URL: http://192.168.1.103:8501
 st.set_page_config(page_title="Aba de Prioridades", page_icon="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsJCQcJCQcJCQkJCwkJCQkJCQsJCwsMCwsLDA0QDBEODQ4MEhkSJRodJR0ZHxwpKRYlNzU2GioyPi0pMBk7IRP/2wBDAQcICAsJCxULCxUsHRkdLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCz/wAARCAC0ALIDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAEHBAYIBQID/8QAQhAAAQQBAQUGAwUFAw0AAAAAAQACAwQFEQYHEhI... ")
 
-st.title("Aba de Prioridades")
+st.title("Prioridades")
 st.divider()
 st.header('Digite as informações abaixo:')
 
