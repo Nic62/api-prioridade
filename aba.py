@@ -2,20 +2,20 @@ import streamlit as st
 import pandas as pd
 import re
 
-# Configuração da página
+# Configuração da página com a imagem como ícone
 st.set_page_config(
     page_title="Aba de Prioridades", 
-    page_icon="🛠️"
+    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png"
 )
 
-# Criando layout com título e imagem ao lado
-col1, col2 = st.columns([0.75, 0.25])  # Ajustei proporções para mais espaço à imagem
+# Criando layout com título e imagem lado a lado
+col1, col2 = st.columns([0.85, 0.15])  # Ajuste de proporções para melhor alinhamento
 
 with col1:
-    st.title("Prioridades")  # Título na esquerda
+    st.title("Prioridades")  # Título bem posicionado
 
 with col2:
-    st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=150)  # Imagem maior
+    st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=120)  # Imagem ao lado
 
 st.divider()
 st.header('Digite as informações abaixo:')
