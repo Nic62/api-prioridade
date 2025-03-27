@@ -5,9 +5,7 @@ import re
 #.\venv\Scripts\activate
 # streamlit run aba.py
 st.set_page_config(
-     page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png",
-page_title="Aba de Prioridades"
-   
+page_title="Aba de Prioridades", page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png"
 )
 
 col1, col2 = st.columns([0.85, 0.15])
@@ -46,5 +44,6 @@ if st.session_state["dados"]:
     df = pd.DataFrame(st.session_state["dados"])
     st.dataframe(df)
     # botao2
-if st.button("Acessar Planilha Google",False):
-    st.markdown('(https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0)', unsafe_allow_html=True)
+if st.button("Acessar Planilha Google",False): webbrowser.open("https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0")
+if st.button("Acessar Looker"):
+    webbrowser.open("https://looker.com")
