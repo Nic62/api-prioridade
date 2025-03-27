@@ -1,20 +1,20 @@
 import streamlit as st
 import pandas as pd
 import re
+import webbrowser
+
 # import joblib as jb
 #.\venv\Scripts\activate
 # streamlit run aba.py
+
 st.set_page_config(
-page_title="Aba de Prioridades", page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png"
+    page_title="Aba de Prioridades", 
+    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png"
 )
 
-col1, col2 = st.columns([0.85, 0.15])
-
-with col1:
-    st.title("Prioridades")
-
-with col2:
-    st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=150
+# 1. Imagem no topo
+st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=150)  
+st.title("Prioridades")
 
 st.divider()
 st.header('Digite as informações abaixo:')
