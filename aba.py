@@ -14,7 +14,10 @@ st.set_page_config(
 
 st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=150)  
 st.title("Prioridades")
-
+st.markdown(
+    "<h1 style='text-align: center;'>Prioridades</h1>", 
+    unsafe_allow_html=True
+)
 st.divider()
 st.header('Digite as informações abaixo:')
 
