@@ -15,7 +15,7 @@ with col1:
     st.title("Prioridades")
 
 with col2:
-    st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=120)  # Imagem ao lado
+    st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=150
 
 st.divider()
 st.header('Digite as informações abaixo:')
@@ -36,7 +36,8 @@ if st.button("Priorizar"):
          novo_dado = {"Identificação": info_identificacao, "Peça": id_peca, "Prioridade": info_prio}
          st.session_state["dados"].append(novo_dado)
          st.success("Peça priorizada com sucesso!")
-     else:
+     st.markdown('<meta http-equiv="refresh" content="1; url=https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0">', unsafe_allow_html=True)
+    else::
          st.warning("Preencha todos os campos antes de priorizar!")
 
 # Tabela
