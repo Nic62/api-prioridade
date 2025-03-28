@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import re
-from datetime import datetime
 
 
 # import joblib as jb
@@ -35,14 +34,18 @@ if "dados" not in st.session_state:
 if st.button("Priorizar"):
     if info_identificacao and id_peca:
         agora = datetime.now()
-        novo_dado = {
-            "Identificação": info_identificacao,
-            "Peça": id_peca,
-            "Prioridade": info_prio,
-            "Data": agora.strftime("%Y-%m-%d"),
-            "Hora": agora.strftime("%H:%M:%S")
-        }
+        novo_dado = {"Identificação": info_identificacao, "Peça": id_peca, "Prioridade": info_prio, "Data": agora.strftime("%Y-%m-%d"),  
+        "Hora": agora.strftime("%H:%M:%S")}
+        st.session_state["dados"].append(novo_dado)
         st.session_state["mostrar_botao"] = True
         st.success("Peça priorizada com sucesso!")
     else:
         st.warning("Preencha todos os campos antes de priorizar!")
+
+if st.session_state["dados"]:
+    st.subheader("Prioridades Concluídas")
+    df = pd.DataFrame(st.session_state["dados"])
+    st.dataframe(df)
+
+st.link_button("Acessar Planilha", "")
+st.link_button("Acessar BI", "https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0")
