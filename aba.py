@@ -31,16 +31,21 @@ info_prio = st.radio("Selecione o grau de prioridade:", ['Por volta de 40 unidad
 if "dados" not in st.session_state:
     st.session_state["dados"] = []
 
-if st.button("Priorizar"):
-    if info_identificacao and id_peca:
-        agora = datetime.now()
-        novo_dado = {"Identificação": info_identificacao, "Peça": id_peca, "Prioridade": info_prio, "Data": agora.strftime("%Y-%m-%d"),  
-        "Hora": agora.strftime("%H:%M:%S")}
-        st.session_state["dados"].append(novo_dado)
-        st.session_state["mostrar_botao"] = True
-        st.success("Peça priorizada com sucesso!")
-    else:
-        st.warning("Preencha todos os campos antes de priorizar!")
+if info_identificacao and id_peca:
+    agora = datetime.now()
+    novo_dado = {
+        "Identificação": info_identificacao,
+        "Peça": id_peca,
+        "Prioridade": info_prio,
+        "Data": agora.strftime("%Y-%m-%d"),
+        "Hora": agora.strftime("%H:%M:%S")
+    }
+    
+    st.session_state["dados"].append(novo_dado)
+    st.session_state["mostrar_botao"] = True
+    st.success("Peça priorizada com sucesso!")
+else:
+    st.warning("Preencha todos os campos antes de priorizar!")
 
 if st.session_state["dados"]:
     st.subheader("Prioridades Concluídas")
