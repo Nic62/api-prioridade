@@ -50,5 +50,5 @@ if st.session_state["dados"]:
     st.dataframe(df)
 
 # Botões de acesso
-st.link_button("Acessar Planilha", "")
-st.link_button("Acessar BI", "https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0")
+st.link_button("Acessar Planilha", "https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0")
+st.link_button("Acessar BI", "https://lookerstudio.google.com/")
