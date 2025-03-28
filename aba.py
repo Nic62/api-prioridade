@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import re
-import datetime
+from datetime import datetime
 
 # import joblib as jb
 #.\venv\Scripts\activate
