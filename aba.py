@@ -32,7 +32,7 @@ info_prio = st.radio("Selecione o grau de prioridade:", ['Por volta de 40 unidad
 if "dados" not in st.session_state:
     st.session_state["dados"] = []
 
-iif st.button("Priorizar"):
+if st.button("Priorizar"):
     if info_identificacao and id_peca:
         agora = datetime.now()
         novo_dado = {
