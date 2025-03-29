@@ -14,7 +14,7 @@ st.set_page_config(
 
 col1, col2, col3 = st.columns(3)
 with col2:
-    st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=150)
+    st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=200)
 st.markdown(
     "<h1 style='text-align: center;'>Prioridades</h1>", 
     unsafe_allow_html=True)
@@ -62,4 +62,4 @@ with col2:
     
 col1, col2, col3 = st.columns(3)
 with col2:
-    st.link_button("BI", "https://lookerstudio.google.com/")
+    st.link_button("Dashboard", "https://lookerstudio.google.com/")
