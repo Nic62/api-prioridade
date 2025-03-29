@@ -32,7 +32,10 @@ info_prio = st.radio("Selecione o grau de prioridade:", ['Por volta de 40 unidad
 
 if "dados" not in st.session_state:
     st.session_state["dados"] = []
-if st.button("Priorizar"):
+    
+col1, col2, col3 = st.columns(3)
+with col2:
+ if st.button("Priorizar"):
     if info_identificacao and id_peca:
         agora = datetime.now()
         novo_dado = {
@@ -53,6 +56,10 @@ if st.session_state["dados"]:
     df = pd.DataFrame(st.session_state["dados"])
     st.dataframe(df)
 
-# Botões de acesso
-st.link_button("Acessar Planilha", "https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0")
-st.link_button("Acessar BI", "https://lookerstudio.google.com/")
+col1, col2, col3 = st.columns(3)
+with col2:
+    st.link_button("Acessar Planilha", "https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0")
+    
+col1, col2, col3 = st.columns(3)
+with col2:
+    st.link_button("Acessar BI", "https://lookerstudio.google.com/")
