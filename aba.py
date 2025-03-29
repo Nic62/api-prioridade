@@ -9,7 +9,7 @@ from datetime import datetime
 
 st.set_page_config(
     page_title="Aba de Prioridades", 
-    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png")
+    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png"
     layout="centered")
 
     st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=150)
