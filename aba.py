@@ -35,7 +35,7 @@ if "dados" not in st.session_state:
 col1, col2, col3 = st.columns(3)
 with col2:
  if st.button("Priorizar"):
-if info_identificacao and id_peca:
+ if info_identificacao and id_peca:
         agora = datetime.now()
         novo_dado = {
             "Identificação": info_identificacao,
@@ -47,7 +47,7 @@ if info_identificacao and id_peca:
         st.session_state["dados"].append(novo_dado)
         st.session_state["mostrar_botao"] = True
         st.success("Peça priorizada com sucesso!")
-else:
+ else:
         st.warning("Preencha todos os campos antes de priorizar!")
 
 if st.session_state["dados"]:
