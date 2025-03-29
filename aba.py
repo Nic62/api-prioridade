@@ -9,8 +9,7 @@ from datetime import datetime
 
 st.set_page_config(
     page_title="Aba de Prioridades", 
-    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png",
-    layout="centered")
+    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png")
 
 col1, col2, col3 = st.columns(3)
 with col2:
