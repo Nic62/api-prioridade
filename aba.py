@@ -11,10 +11,10 @@ st.set_page_config(
     page_title="Aba de Prioridades", 
     page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png")
 
-st.markdown(
-    "<div style='text-align: center;'><img src='https://logospng.org/download/grupo-caoa/logo-caoa-2048.png' width='150'></div>",
-    unsafe_allow_html=True
-)
+col1, col2, col3 = st.columns([1, 2, 1])
+
+with col2:
+    st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=150)
 
 st.markdown(
     "<h1 style='text-align: center;'>Prioridades</h1>", 
