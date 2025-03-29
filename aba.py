@@ -17,6 +17,8 @@ st.markdown(
     "<h1 style='text-align: center;'>Prioridades</h1>", 
     unsafe_allow_html=True)
 st.divider()
+st.page_link("solicitacao.py", label="Acessar Relatório", icon="📄")
+
 st.header('Digite as informações abaixo:')
 
 info_identificacao = st.text_input("Digite identificação:")
