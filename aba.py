@@ -2,11 +2,12 @@ import streamlit as st
 import pandas as pd
 import re
 from datetime import datetime
+import pytz
 
 # import joblib as jb
 # .\venv\Scripts\activate
 # streamlit run aba.py
-
+fuso_horario = pytz.timezone("America/Sao_Paulo")
 st.set_page_config(
     page_title="Aba de Prioridades", 
     page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png")
@@ -36,7 +37,7 @@ col1, col2, col3 = st.columns(3)
 with col2:
  if st.button("Priorizar"):
    if info_identificacao and id_peca:
-        agora = datetime.now()
+        agora = datetime.now(fuso_horario)
         novo_dado = {
             "Identificação": info_identificacao,
             "Peça": id_peca,
