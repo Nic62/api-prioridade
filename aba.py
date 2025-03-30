@@ -8,7 +8,7 @@ import pytz
 fuso_horario = pytz.timezone("America/Sao_Paulo")
 st.set_page_config(
     page_title="Aba de Prioridades", 
-    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png"")
+    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png")
 
 
 st.markdown(
