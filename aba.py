@@ -4,12 +4,10 @@ import re
 from datetime import datetime
 import pytz
 
-
 fuso_horario = pytz.timezone("America/Sao_Paulo")
 st.set_page_config(
     page_title="Aba de Prioridades", 
-    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png")
-
+    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png"")
 
 st.markdown(
     """
@@ -20,19 +18,20 @@ st.markdown(
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
             padding: 20px;
             background-color: #f9f9f9;
+            margin: 0 auto;
+            width: 90%;
+        }
+        .stApp {
+            display: flex;
+            justify-content: center;
         }
     </style>
     <div class='main-container'>
     """,
-    unsafe_allow_html=True
-)
-
-
+    unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
 with col2:
     st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=200)
-
-# Título
 st.markdown("<h1 style='text-align: center;'>Prioridades</h1>", unsafe_allow_html=True)
 st.divider()
 
