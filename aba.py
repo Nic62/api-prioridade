@@ -4,16 +4,21 @@ import re
 from datetime import datetime
 import pytz
 
+# Configuração do fuso horário
 fuso_horario = pytz.timezone("America/Sao_Paulo")
-st.set_page_config(
-    page_title="Aba de Prioridades", 
-    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png")
 
+# Configuração da página
+st.set_page_config(
+    page_title="REGISTRADOR DE PRIORIDADE", 
+    page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png",
+    layout="wide"
+)
+
+# Aplicando estilos personalizados para cobrir toda a tela
 st.markdown(
-      """
+    """
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        .stApp {
             background-color: #f4f4f4;
             display: flex;
             justify-content: center;
@@ -22,9 +27,10 @@ st.markdown(
             margin: 0;
         }
         .container {
-            max-width: 400px;
+            width: 50%;
+            max-width: 600px;
             background: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
@@ -39,12 +45,16 @@ st.markdown(
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+        .button-group {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
         .button-group button {
             background-color: #004080;
             color: white;
             border: none;
             padding: 10px 15px;
-            margin: 5px;
             cursor: pointer;
             border-radius: 5px;
         }
@@ -56,54 +66,25 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-col1, col2, col3 = st.columns(3)
+
+# Logo no topo
+st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=200)
+
+# Título
+st.markdown("<h2>Registro de Pedidos</h2>", unsafe_allow_html=True)
+
+# Formulário
+st.text_input("Usuário:", key="Nome")
+st.text_input("Código da Peça:", key="Codigo")
+
+# Botões
+col1, col2 = st.columns(2)
+with col1:
+    if st.button("Registrar Pedido"):
+        st.success("Pedido registrado com sucesso!")
 with col2:
-    st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=200)
-st.markdown("<h1 style='text-align: center;'>Prioridades</h1>", unsafe_allow_html=True)
-st.divider()
+    if st.button("Lista de Pedidos"):
+        st.markdown("[Ver Lista](https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0)")
 
-st.header('Digite as informações abaixo:')
-
-info_identificacao = st.text_input("Digite identificação:")
-if info_identificacao and not re.match("^[A-Za-z.]+$", info_identificacao):
-    st.error("Erro: Apenas letras (sem acentos) e ponto são permitidos!")
-
-id_peca = st.text_input("Digite a peça:")
-info_prio = st.radio("Selecione o grau de prioridade:", ['Por volta de 40 unidades', 'Menos de 20 unidades', 'Sem saldo no módulo'])
-
-if "dados" not in st.session_state:
-    st.session_state["dados"] = []
-    
-col1, col2, col3 = st.columns(3)
-with col2:
-    if st.button("Priorizar"):
-        if info_identificacao and id_peca:
-            agora = datetime.now(fuso_horario)
-            novo_dado = {
-                "Identificação": info_identificacao,
-                "Peça": id_peca,
-                "Prioridade": info_prio,
-                "Data": agora.strftime("%Y-%m-%d"),
-                "Hora": agora.strftime("%H:%M:%S")
-            }
-            
-            st.session_state["dados"].append(novo_dado)
-            st.session_state["mostrar_botao"] = True
-            st.success("Peça priorizada com sucesso!")
-        else:
-            st.warning("Preencha todos os campos antes de priorizar!")
-
-if st.session_state["dados"]:
-    st.subheader("Prioridades Concluídas")
-    df = pd.DataFrame(st.session_state["dados"])
-    st.dataframe(df)
-
-col1, col2, col3 = st.columns(3)
-with col2:
-    st.link_button("Planilha", "https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0")
-    
-col1, col2, col3 = st.columns(3)
-with col2:
-    st.link_button("Dashboard", "https://lookerstudio.google.com/")
-
+# Fechando a div principal
 st.markdown("</div>", unsafe_allow_html=True)
