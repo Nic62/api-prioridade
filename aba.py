@@ -14,41 +14,46 @@ st.set_page_config(
     layout="wide"
 )
 
-# Aplicando estilos personalizados para cobrir toda a tela
+# Aplicando estilos personalizados para cobrir toda a tela com borda e sombra
 st.markdown(
     """
     <style>
-        .stApp {
-            background-color: #f4f4f4;
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            background-color: #f4f4f4;
         }
-        .container {
-            width: 50%;
-            max-width: 600px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
+        .stApp {
+            border: 5px solid #004080;
+            border-radius: 15px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            width: calc(100vw - 40px);
+            height: calc(100vh - 40px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         h2 {
             color: #004080;
+            text-align: center;
         }
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .stTextInput, .stButton {
+            width: 80%;
+            margin: 10px auto;
         }
         .button-group {
             display: flex;
-            justify-content: space-around;
-            margin-top: 15px;
+            justify-content: center;
+            gap: 20px;
         }
         .button-group button {
             background-color: #004080;
@@ -62,7 +67,6 @@ st.markdown(
             background-color: #002D5A;
         }
     </style>
-    <div class='container'>
     """,
     unsafe_allow_html=True
 )
@@ -85,6 +89,3 @@ with col1:
 with col2:
     if st.button("Lista de Pedidos"):
         st.markdown("[Ver Lista](https://docs.google.com/spreadsheets/d/1jbI9wN9ny8HCJPOX66i69zdCSp6eoHNK9V5IhJ5ftMk/edit?gid=0#gid=0)")
-
-# Fechando a div principal
-st.markdown("</div>", unsafe_allow_html=True)
