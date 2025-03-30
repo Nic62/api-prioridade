@@ -11,19 +11,25 @@ st.set_page_config(
 
 st.markdown(
     """
-    <style>
-        .main-container {
+   <style>
+        /* Garante que toda a página tenha a borda */
+        body {
             border: 4px solid #004080;
             border-radius: 10px;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
             padding: 20px;
             background-color: #f9f9f9;
-            margin: 0 auto;
-            width: 90%;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
         }
         .stApp {
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
         }
     </style>
     <div class='main-container'>
