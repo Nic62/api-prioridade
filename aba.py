@@ -10,31 +10,52 @@ st.set_page_config(
     page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png")
 
 st.markdown(
-    """
-   <style>
-        /* Garante que toda a página tenha a borda */
+      """
+    <style>
         body {
-            border: 4px solid #004080;
-            border-radius: 10px;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            background-color: #f9f9f9;
-            margin: 0;
-            height: 100vh;
-            width: 100vw;
-        }
-        .stApp {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            height: 100%;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h2 {
+            color: #004080;
+        }
+        input {
             width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button-group button {
+            background-color: #004080;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button-group button:hover {
+            background-color: #002D5A;
         }
     </style>
-    <div class='main-container'>
+    <div class='container'>
     """,
-    unsafe_allow_html=True)
+    unsafe_allow_html=True
+)
 col1, col2, col3 = st.columns(3)
 with col2:
     st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=200)
