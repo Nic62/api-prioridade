@@ -8,61 +8,7 @@ fuso_horario = pytz.timezone("America/Sao_Paulo")
 st.set_page_config(
     page_title="Aba de Prioridades", 
     page_icon="https://logospng.org/download/grupo-caoa/logo-caoa-2048.png")
-st.markdown(
-    """
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f4f4f4;
-        }
-        .stApp {
-            border: 5px solid #004080;
-            border-radius: 15px;
-            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            margin: 20px;
-            background-color: white;
-            width: calc(100vw - 40px);
-            height: calc(100vh - 40px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        h2 {
-            color: #004080;
-            text-align: center;
-        }
-        .stTextInput, .stButton {
-            width: 80%;
-            margin: 10px auto;
-        }
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .button-group button {
-            background-color: #004080;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .button-group button:hover {
-            background-color: #002D5A;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 col1, col2, col3 = st.columns(3)
 with col2:
     st.image("https://logospng.org/download/grupo-caoa/logo-caoa-2048.png", width=200)
